@@ -1,6 +1,17 @@
 # Gemstone Recommendation App
 
 A full-stack web application for an astrology consultation business that recommends gemstones based on user birth details and generates detailed recommendation reports.
+## Live Features
+
+✅ Authentication & Authorization  
+✅ Profile Management  
+✅ Gemstone Recommendation Engine  
+✅ Recommendation History  
+✅ PDF Report Export  
+✅ Admin Dashboard  
+✅ Analytics & Statistics  
+✅ Dark Mode Support  
+✅ Docker Deployment
 
 ## Tech Stack
 
@@ -12,6 +23,16 @@ A full-stack web application for an astrology consultation business that recomme
 | Auth | JWT (JSON Web Tokens) |
 | Validation | Zod |
 | PDF Export | PDFKit |
+
+## Architecture
+
+Frontend (React)
+        |
+        v
+Backend API (Express)
+        |
+        v
+MongoDB Database
 
 ## Features
 
@@ -46,6 +67,15 @@ src/
         ├── types/          # Shared TypeScript types
         └── utils/          # Helpers, seed script, zodiac logic
 ```
+## Future Improvements
+
+- AI-powered gemstone recommendation engine
+- Horoscope API integration
+- Email notification system
+- Appointment booking module
+- Multi-language support
+- Advanced analytics dashboard
+- Cloud deployment using AWS
 
 ## Prerequisites
 
