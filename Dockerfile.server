@@ -1,0 +1,24 @@
+FROM node:20-alpine AS builder
+
+WORKDIR /app
+
+COPY package.json ./
+COPY src/server/package.json ./src/server/
+RUN npm install --workspace=src/server
+
+COPY src/server ./src/server
+RUN npm run build --workspace=src/server
+
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY package.json ./
+COPY src/server/package.json ./src/server/
+RUN npm install --workspace=src/server --omit=dev
+
+COPY --from=builder /app/src/server/dist ./src/server/dist
+
+EXPOSE 5000
+
+CMD ["node", "src/server/dist/index.js"]

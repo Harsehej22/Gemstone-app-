@@ -1,0 +1,22 @@
+{
+  "name": "gemstone-recommendation-app",
+  "version": "1.0.0",
+  "description": "Gemstone Recommendation App for astrology consultation business",
+  "private": true,
+  "workspaces": [
+    "src/server",
+    "src/client"
+  ],
+  "scripts": {
+    "dev": "concurrently -k -n server,client -c blue,green \"npm run dev:server\" \"npm run dev:client\"",
+    "start:joint": "npm run dev",
+    "dev:server": "npm run dev --workspace=src/server",
+    "dev:client": "npm run dev --workspace=src/client",
+    "build": "npm run build --workspace=src/server && npm run build --workspace=src/client",
+    "start": "npm run start --workspace=src/server",
+    "seed": "npm run seed --workspace=src/server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
